@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    style="?attr/materialCardViewFilledStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/card_single_spacing"
+                    android:layout_marginTop="@dimen/card_single_spacing"
+                    android:orientation="vertical"
+                    app:cardBackgroundColor="@color/white">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="@dimen/card_single_spacing">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/card_single_spacing"
+                            android:text="@string/start_exercise"
+                            android:textSize="@dimen/text_double" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginHorizontal="@dimen/card_single_spacing"
+                            android:background="@color/underline" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/card_single_spacing">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/box_running"
+                                style="?attr/materialCardViewFilledStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/card_small_spacing"
+                                android:layout_weight="1"
+                                android:clickable="true"
+                                android:gravity="center"
+                                app:cardBackgroundColor="@color/white">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:clickable="false"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:paddingVertical="@dimen/card_single_spacing">
+
+                                    <com.google.android.material.imageview.ShapeableImageView
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:clickable="false"
+                                        android:src="@drawable/run_24" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:clickable="false"
+                                        android:text="@string/running" />
+                                </LinearLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/box_walking"
+                                style="?attr/materialCardViewFilledStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/card_small_spacing"
+                                android:layout_weight="1"
+                                android:clickable="true"
+                                android:gravity="center"
+                                app:cardBackgroundColor="@color/white">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:clickable="false"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:paddingVertical="@dimen/card_single_spacing">
+
+                                    <com.google.android.material.imageview.ShapeableImageView
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:clickable="false"
+                                        android:src="@drawable/walk_24" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:clickable="false"
+                                        android:text="@string/walking" />
+                                </LinearLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/box_riding"
+                                style="?attr/materialCardViewFilledStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/card_small_spacing"
+                                android:layout_weight="1"
+                                android:clickable="true"
+                                android:gravity="center"
+                                app:cardBackgroundColor="@color/white">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:clickable="false"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:paddingVertical="@dimen/card_single_spacing">
+
+                                    <com.google.android.material.imageview.ShapeableImageView
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:clickable="false"
+                                        android:src="@drawable/bike_24" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:clickable="false"
+                                        android:text="@string/riding" />
+                                </LinearLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/lastBox"
+                    style="?attr/materialCardViewFilledStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/card_single_spacing"
+                    android:layout_marginTop="@dimen/card_single_spacing"
+                    android:orientation="vertical"
+                    app:cardBackgroundColor="@color/white">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="@dimen/card_single_spacing"
+                        android:paddingVertical="@dimen/card_double_spacing">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/card_single_spacing"
+                            android:text="@string/last_few_day"
+                            android:textSize="@dimen/text_double" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginHorizontal="@dimen/card_single_spacing"
+                            android:background="@color/underline" />
+
+                        <com.github.mikephil.charting.charts.BarChart
+                            android:id="@+id/lastSevenDayData"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:visibility="gone" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_margin="@dimen/card_single_spacing"
+                            android:background="@color/underline" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/exerciseRec"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:overScrollMode="never" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/expansion"
+                            style="?attr/materialCardViewFilledStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_small_spacing"
+                            android:clickable="true"
+                            android:orientation="vertical"
+                            app:cardBackgroundColor="@color/white">
+
+                            <ImageView
+                                android:id="@+id/expansion_img"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/unfold" />
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+</layout>

@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.scwang.smart.refresh.layout.SmartRefreshLayout
+            android:id="@+id/refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Widget.Material3.CardView.Filled"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/card_single_spacing"
+                    android:layout_marginTop="@dimen/card_single_spacing"
+                    android:clickable="false"
+                    android:focusable="true"
+                    app:cardBackgroundColor="@color/white">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/user_avatar"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_marginVertical="@dimen/card_double_spacing"
+                            android:layout_marginStart="@dimen/card_double_spacing"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/logo_tans" />
+
+                        <LinearLayout
+                            android:id="@+id/user_info_box"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginVertical="@dimen/card_double_spacing"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:paddingHorizontal="@dimen/card_double_spacing">
+
+                            <TextView
+                                android:id="@+id/user_nick_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxLength="16"
+                                android:text="@string/username"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_double" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/user_height"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center|start"
+                                    android:text="@string/user_height_str" />
+
+                                <TextView
+                                    android:id="@+id/user_weight"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center|start"
+                                    android:text="@string/user_weight_str" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/logout_button"
+                            style="?attr/materialIconButtonFilledTonalStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/card_small_spacing"
+                            android:contentDescription="@string/Description"
+                            app:backgroundTint="@color/white"
+                            app:icon="@drawable/logout_24" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    style="?attr/materialCardViewFilledStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/card_single_spacing"
+                    android:layout_marginTop="@dimen/card_single_spacing"
+                    android:orientation="vertical"
+                    app:cardBackgroundColor="@color/white">
+
+                    <LinearLayout
+                        android:id="@+id/exercise_data_box"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/card_single_spacing"
+                            android:text="@string/allDay"
+                            android:textSize="@dimen/text_double" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginHorizontal="@dimen/card_single_spacing"
+                            android:background="@color/underline" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_triple_spacing"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/month_distance"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/alfa_slab_one"
+                                    android:text="@string/distance_exam" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/month_distance" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/month_calories"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/alfa_slab_one"
+                                    android:text="@string/calories_exam" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/month_calories" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="@dimen/card_triple_spacing"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/year_distance"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/alfa_slab_one"
+                                    android:text="@string/distance_exam" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/year_distance" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/year_calories"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/alfa_slab_one"
+                                    android:text="@string/calories_exam" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/year_calories" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    style="?attr/materialCardViewFilledStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/card_single_spacing"
+                    android:layout_marginTop="@dimen/card_single_spacing"
+                    android:orientation="vertical"
+                    app:cardBackgroundColor="@color/white">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/card_single_spacing"
+                            android:text="@string/weight_change"
+                            android:textSize="@dimen/text_double" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginHorizontal="@dimen/card_single_spacing"
+                            android:background="@color/underline" />
+
+                        <com.github.mikephil.charting.charts.LineChart
+                            android:id="@+id/weight_chart"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_marginHorizontal="@dimen/card_triple_spacing" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/update_weight_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/card_double_spacing"
+            android:text="@string/update_today_weight"
+            android:textColor="@color/black"
+            app:backgroundTint="?attr/customButtonColor"
+            app:icon="@drawable/baseline_add_24"
+            app:iconTint="@color/black"
+            app:rippleColor="@color/background"
+            app:tint="@color/black" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

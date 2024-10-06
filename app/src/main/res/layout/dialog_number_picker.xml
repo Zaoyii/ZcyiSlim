@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="?attr/materialCardViewFilledStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/card_triple_spacing"
+    android:layout_marginHorizontal="@dimen/card_max_plus_spacing"
+    android:clickable="false"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="@dimen/card_double_spacing">
+
+    <NumberPicker
+        android:id="@+id/num_pic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="@dimen/card_max_plus_spacing" />
+</com.google.android.material.card.MaterialCardView>

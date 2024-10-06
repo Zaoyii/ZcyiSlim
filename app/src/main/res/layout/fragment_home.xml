@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.search.SearchBar
+                android:id="@+id/cat_search_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/card_single_spacing"
+                android:hint="@string/searchbar_hint"
+                app:backgroundTint="@color/white" />
+
+            <com.scwang.smart.refresh.layout.SmartRefreshLayout
+                android:id="@+id/refresh_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/background">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/task_box"
+                            style="?attr/materialCardViewFilledStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/card_single_spacing"
+                            android:orientation="vertical"
+                            android:visibility="visible"
+                            app:cardBackgroundColor="@color/white">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:paddingHorizontal="@dimen/card_single_spacing">
+
+                                <TextView
+                                    android:id="@+id/task_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/card_single_spacing"
+                                    android:text="@string/task_week"
+                                    android:textSize="@dimen/text_triple" />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0.5dp"
+                                    android:layout_marginHorizontal="@dimen/card_single_spacing"
+                                    android:background="@color/underline" />
+
+                                <TextView
+                                    android:id="@+id/task_type_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="@dimen/card_single_spacing"
+                                    android:layout_marginVertical="@dimen/card_small_spacing"
+                                    android:text="@string/goal_type_A"
+                                    android:textSize="@dimen/text_double" />
+
+                                <TextView
+                                    android:id="@+id/task_duration"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/card_single_spacing"
+                                    android:text="@string/goal_duration" />
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/task_recycler_view"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/card_single_spacing"
+                                    android:text="@string/task_dietary_advice"
+                                    android:textSize="@dimen/text_double" />
+
+                                <TextView
+                                    android:id="@+id/task_dietary_advice"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="@dimen/card_single_spacing"
+                                    android:layout_marginBottom="@dimen/card_double_spacing"
+                                    android:textSize="@dimen/text_single" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <HorizontalScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="@dimen/card_double_spacing">
+
+                            <com.google.android.material.chip.ChipGroup
+                                android:id="@+id/chip_group_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:singleLine="true" />
+                        </HorizontalScrollView>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/food_recycler_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="@dimen/card_single_spacing"
+                            android:layout_marginBottom="@dimen/card_single_spacing"
+                            android:clipChildren="false"
+                            android:clipToPadding="false" />
+                    </LinearLayout>
+                </androidx.core.widget.NestedScrollView>
+            </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+        </LinearLayout>
+
+        <com.google.android.material.search.SearchView
+            android:id="@+id/cat_search_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/searchbar_hint"
+            app:backgroundTint="@color/white"
+            app:layout_anchor="@id/cat_search_bar">
+
+            <TextView
+                android:id="@+id/search_alert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/card_triple_spacing"
+                android:text="@string/search_alert"
+                android:visibility="gone" />
+
+            <ScrollView
+                android:id="@+id/result_box"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/search_result"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never" />
+
+            </ScrollView>
+        </com.google.android.material.search.SearchView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

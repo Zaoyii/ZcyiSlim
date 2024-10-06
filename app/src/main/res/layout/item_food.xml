@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_card"
+    style="@style/Widget.Material3.CardView.Filled"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/card_small_spacing"
+    android:clickable="true"
+    android:focusable="true"
+    android:minHeight="@dimen/cat_card_rich_media_demo_min_height"
+    app:cardBackgroundColor="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/food_image"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/Description"
+            android:scaleType="centerCrop"
+            app:backgroundTint="@color/background"
+            app:backgroundTintMode="add" />
+
+        <TextView
+            android:id="@+id/food_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/card_double_spacing"
+            android:layout_marginTop="@dimen/card_single_spacing"
+            android:layout_marginEnd="@dimen/card_double_spacing"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="@dimen/text_double" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/card_double_spacing"
+            android:layout_marginEnd="@dimen/card_single_spacing"
+            android:layout_marginBottom="@dimen/card_single_spacing"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/food_calories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/card_small_spacing"
+                android:textColor="@color/calories"
+                android:textSize="@dimen/text_large" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/card_single_spacing"
+                android:text="@string/unit_with_str"
+                android:textColor="@color/underline"
+                android:textSize="@dimen/text_small" />
+        </LinearLayout>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

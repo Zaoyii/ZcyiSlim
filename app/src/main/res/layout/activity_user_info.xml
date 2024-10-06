@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/back_button"
+                style="?attr/materialIconButtonFilledTonalStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/card_single_spacing"
+                android:contentDescription="@string/Description"
+                app:backgroundTint="@color/white"
+                app:icon="@drawable/back" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/user_info"
+                android:textSize="@dimen/text_double" />
+        </FrameLayout>
+
+        <com.scwang.smart.refresh.layout.SmartRefreshLayout
+            android:id="@+id/refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background">
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.Material3.CardView.Filled"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/card_single_spacing"
+                android:clickable="false"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/user_avatar_box"
+                        style="@style/Widget.Material3.CardView.Filled"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/card_double_spacing"
+                        android:layout_marginVertical="@dimen/card_single_spacing"
+                        android:clickable="true"
+                        app:cardBackgroundColor="@color/white">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|start"
+                                android:layout_margin="@dimen/card_double_spacing"
+                                android:text="@string/user_avatar"
+                                android:textSize="@dimen/text_single" />
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:id="@+id/user_avatar"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_gravity="center|end"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/logo_tans" />
+                        </FrameLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginHorizontal="@dimen/card_double_spacing"
+                        android:background="@color/underline" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/username_box"
+                        style="@style/Widget.Material3.CardView.Filled"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/card_double_spacing"
+                        android:layout_marginVertical="@dimen/card_single_spacing"
+                        android:clickable="true"
+                        app:cardBackgroundColor="@color/white">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/card_double_spacing">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|start"
+                                android:text="@string/init_username"
+                                android:textSize="@dimen/text_single" />
+
+                            <TextView
+                                android:id="@+id/username"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|end"
+                                android:text="@string/username"
+                                android:textSize="@dimen/text_single" />
+                        </FrameLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginHorizontal="@dimen/card_double_spacing"
+                        android:background="@color/underline" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/user_nick_name_box"
+                        style="@style/Widget.Material3.CardView.Filled"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/card_double_spacing"
+                        android:layout_marginVertical="@dimen/card_single_spacing"
+                        android:clickable="true"
+                        app:cardBackgroundColor="@color/white">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/card_double_spacing">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|start"
+                                android:text="@string/user_nick_name"
+                                android:textSize="@dimen/text_single" />
+
+                            <TextView
+                                android:id="@+id/user_nick_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|end"
+                                android:textSize="@dimen/text_single" />
+                        </FrameLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginHorizontal="@dimen/card_double_spacing"
+                        android:background="@color/underline" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/user_gender_box"
+                        style="@style/Widget.Material3.CardView.Filled"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/card_double_spacing"
+                        android:layout_marginVertical="@dimen/card_single_spacing"
+                        android:clickable="true"
+                        app:cardBackgroundColor="@color/white">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/card_double_spacing">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|start"
+                                android:text="@string/user_gender"
+                                android:textSize="@dimen/text_single" />
+
+                            <TextView
+                                android:id="@+id/user_gender"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|end"
+                                android:textSize="@dimen/text_single" />
+                        </FrameLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginHorizontal="@dimen/card_double_spacing"
+                        android:background="@color/underline" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/user_age_box"
+                        style="@style/Widget.Material3.CardView.Filled"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/card_double_spacing"
+                        android:layout_marginVertical="@dimen/card_single_spacing"
+                        android:clickable="true"
+                        app:cardBackgroundColor="@color/white">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/card_double_spacing">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|start"
+                                android:text="@string/user_age"
+                                android:textSize="@dimen/text_single" />
+
+                            <TextView
+                                android:id="@+id/user_age"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|end"
+                                android:textSize="@dimen/text_single" />
+                        </FrameLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginHorizontal="@dimen/card_double_spacing"
+                        android:background="@color/underline" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/user_email_box"
+                        style="@style/Widget.Material3.CardView.Filled"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/card_double_spacing"
+                        android:layout_marginVertical="@dimen/card_single_spacing"
+                        android:clickable="true"
+                        app:cardBackgroundColor="@color/white">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/card_double_spacing">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|start"
+                                android:text="@string/user_email"
+                                android:textSize="@dimen/text_single" />
+
+                            <TextView
+                                android:id="@+id/user_email"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|end"
+                                android:textSize="@dimen/text_single" />
+                        </FrameLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginHorizontal="@dimen/card_double_spacing"
+                        android:background="@color/underline" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/user_height_box"
+                        style="@style/Widget.Material3.CardView.Filled"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/card_double_spacing"
+                        android:layout_marginVertical="@dimen/card_single_spacing"
+                        android:clickable="true"
+                        app:cardBackgroundColor="@color/white">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/card_double_spacing">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|start"
+                                android:text="@string/user_height"
+                                android:textSize="@dimen/text_single" />
+
+                            <TextView
+                                android:id="@+id/user_height"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|end"
+                                android:textSize="@dimen/text_single" />
+                        </FrameLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginHorizontal="@dimen/card_double_spacing"
+                        android:background="@color/underline" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/user_weight_box"
+                        style="@style/Widget.Material3.CardView.Filled"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/card_double_spacing"
+                        android:layout_marginVertical="@dimen/card_single_spacing"
+                        android:clickable="true"
+                        app:cardBackgroundColor="@color/white">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/card_double_spacing">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|start"
+                                android:text="@string/user_weight"
+                                android:textSize="@dimen/text_single" />
+
+                            <TextView
+                                android:id="@+id/user_weight"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|end"
+                                android:textSize="@dimen/text_single" />
+                        </FrameLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+    </LinearLayout>
+
+</layout>

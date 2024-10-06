@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="customNavigationBGNColor" format="color" />
+    <attr name="customFontColor" format="color" />
+    <attr name="customIconColor" format="color" />
+    <attr name="customButtonColor" format="color" />
+    <attr name="customFunctionalColor" format="color" />
+</resources>
