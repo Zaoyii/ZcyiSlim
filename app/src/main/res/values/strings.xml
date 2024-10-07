@@ -134,4 +134,5 @@
     <string name="task_dietary_advice_C">增加高蛋白饮食，每日摄入足够的蛋白质以支持肌肉生长，适量增加碳水化合物和健康脂肪摄入。</string>
     <string name="task_dietary_advice_D">多摄入蔬果、全谷类、蛋白质和健康脂肪，同时限制盐和糖的摄入。确保足够的钙和维生素D，保持骨骼健康。保持水分摄入，采用小而频繁的餐食方式，避免过量饮酒和吸烟。</string>
     <string name="not_done">点击完成</string>
+    <string name="alert_no_last_exercise">暂无运动数据</string>
 </resources>

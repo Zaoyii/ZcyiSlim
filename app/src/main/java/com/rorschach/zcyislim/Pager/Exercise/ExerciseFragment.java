@@ -137,8 +137,8 @@ public class ExerciseFragment extends Fragment {
                             EventBus.getDefault().post(new Events<>(10));
                         }
                     } else {
-                        if (binding.lastBox.getVisibility() == View.VISIBLE) {
-                            binding.lastBox.setVisibility(View.GONE);
+                        if (binding.expansion.getVisibility() == View.VISIBLE) {
+                            binding.expansion.setVisibility(View.GONE);
                         }
                     }
                 }

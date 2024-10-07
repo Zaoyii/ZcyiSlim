@@ -85,7 +85,7 @@
             android:resource="@array/preloaded_fonts" />
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="49a9aa276e5af2acf08ed1ea3ed86384" />
+            android:value="" />
     </application>
 
 </manifest>

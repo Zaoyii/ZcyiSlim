@@ -19,7 +19,6 @@ import com.bumptech.glide.request.target.CustomTarget;
 import com.bumptech.glide.request.transition.Transition;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.XAxis;
-import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
@@ -133,7 +132,6 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onResponse(Call<ApiResult<HashMap<String, Double>>> call, Response<ApiResult<HashMap<String, Double>>> response) {
                 if (response.body() != null && response.body().success) {
-                    binding.exerciseDataBox.setVisibility(View.VISIBLE);
                     Double yearDistance = response.body().data.get("yearDistance");
                     Double monthDistance = response.body().data.get("monthDistance");
                     Double yearCalories = response.body().data.get("yearCalories");
@@ -148,14 +146,12 @@ public class ProfileFragment extends Fragment {
                         binding.yearCalories.setText(strYearCalories);
                         binding.monthCalories.setText(strMonthCalories);
                     }
-                }else {
-                    binding.exerciseDataBox.setVisibility(View.GONE);
                 }
             }
 
             @Override
             public void onFailure(Call<ApiResult<HashMap<String, Double>>> call, Throwable t) {
-                binding.exerciseDataBox.setVisibility(View.GONE);
+
             }
         });
     }
@@ -196,8 +192,10 @@ public class ProfileFragment extends Fragment {
                     if (response.body().data.size() > 0) {
                         weights = response.body().data;
                         initChart();
+                        return;
                     }
                 }
+                binding.weightCard.setVisibility(View.GONE);
             }
 
             @Override
@@ -208,6 +206,10 @@ public class ProfileFragment extends Fragment {
     }
 
     private void initChart() {
+        if (binding.weightCard.getVisibility() == View.GONE) {
+            binding.weightCard.setVisibility(View.VISIBLE);
+        }
+        binding.weightChart.clear();
         if (listBar == null) {
             listBar = new ArrayList<>();
         } else {
@@ -222,6 +224,7 @@ public class ProfileFragment extends Fragment {
             listBar.add(new BarEntry(i, (float) weights.get(i).getWeightData()));
             listIndex.add(weights.get(i).getWeightCreateTime().substring(5));
         }
+
         LineDataSet lineDataSet = new LineDataSet(listBar, "体重(kg)");
         lineDataSet.setValueTextSize(10f);
         LineData data = new LineData(lineDataSet);
@@ -234,9 +237,10 @@ public class ProfileFragment extends Fragment {
         binding.weightChart.getAxisRight().setEnabled(false);
         binding.weightChart.getAxisLeft().setEnabled(false);
         //x轴
-        //binding.weightChart.getXAxis().setDrawGridLines(false);
+        binding.weightChart.clear();
         binding.weightChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(listIndex));
         binding.weightChart.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
+        binding.weightChart.getXAxis().setGranularity(1);
         binding.weightChart.setTouchEnabled(false);
         binding.weightChart.setData(data);
         Description description = new Description();
